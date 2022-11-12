@@ -52,13 +52,44 @@ Sl no 	Hex code 	Output of LCD
         Figure -3 Circuit diagram of interfacing for LPX4 - CA
 
 ## Kiel - Program 
+~~~
+#include <LPC214x.h>
+unsigned char dig[]={0x88,0xcb,0x4c,0x49,0x2b,0x19,0x18,0xcb,0x8,0x9,0xa,0x38,0x9c,0x68,0x1c,0x1e};
+void delay(unsigned int count)
+{
+int i=0,j=0;
+for(j=0;j<count;j++){
+for(i=0;i<120;i++);
+}
+}
+int main(void)
+{
+unsigned char count=0;
+unsigned int i=0;
+IO0DIR |=(1<<11);
+IO0SET=(1<<11);
+IO0DIR=0x007F8000;
+while(1)
+{
+count++;
+if(count == 16) count=0;
+for(i=0; i<800;i++)
+{
+IO0CLR=0x007F8000;
+IO0SET=(dig[count]<<15);
+delay(200);
+}
+}
+}
+~~~
+
+##  Output screen shots :
+![Screenshot (97)](https://user-images.githubusercontent.com/94165322/201459906-bc7e17da-03c7-4a99-8552-523e92fb93cc.png)
+![Screenshot (98)](https://user-images.githubusercontent.com/94165322/201459909-d52f6450-145a-4210-9777-f41d6303eacb.png)
+![Screenshot_20221112_112702](https://user-images.githubusercontent.com/94165322/201459914-07d7b26a-a9bb-4d9a-80c3-1b0887dd0887.png)
 
 
-
- 
 
 
 ### Result :
 LED seven segment display is interfaced and displayed alpha numeric characters 
-
-##  Output screen shots :
