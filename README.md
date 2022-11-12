@@ -1,13 +1,15 @@
 # Interfacing-Seven-segment-display-with-lpc2148
 
-Name:	
-Roll no 
-Date of experiment:
+Name:NAVEENKUMAR V	
+
+Roll no :212221230068
+
+Date of experiment:10/11/22
 
 
 
-Ex. No. :
-Date: 
+Ex. No. :07
+Date: 10/11/22
  
 
 ### Aim: To configure and display 4 character LED seven segment display and write a c code for displaying number 1 to 9 and A to F 
